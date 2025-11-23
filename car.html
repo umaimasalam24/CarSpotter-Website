@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>CarSpotter</title>
+</head>
+<body class="bg-black">
+      <!-- Nav Bar -->
+  <nav
+    class="bg-black/90 fixed w-full z-20 top-0 left-0 border-b border-neutral-800 backdrop-blur
+           transition-all duration-300"
+  >
+    <div
+      class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-3
+             animate-[fadeInDown_0.6s_ease-out]"
+    >
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <img
+          src="./images-removebg-preview (1).png"
+          class="h-[40px] w-[40px] transition-transform duration-300 group-hover:scale-110"
+          alt="DriveNova Logo"
+        />
+        <span
+          class="text-xl font-semibold text-white tracking-wide
+                 transition-colors duration-300 group-hover:text-red-400"
+        >
+          CarSpotter
+        </span>
+      </a>
+
+      <!-- Toggle button (mobile) -->
+      <button
+        id="nav-toggle"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-300
+               rounded-lg md:hidden hover:bg-neutral-800 focus:outline-none
+               focus:ring-2 focus:ring-neutral-600 transition-colors duration-200"
+        aria-controls="navbar-menu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-6 h-6"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            d="M5 7h14M5 12h14M5 17h14"
+          />
+        </svg>
+      </button>
+
+      <!-- Menu -->
+      <div id="navbar-menu" class="hidden w-full md:block md:w-auto">
+        <ul
+          class="mt-3 md:mt-0 flex flex-col md:flex-row md:items-center gap-2 md:gap-6
+                 px-4 py-3 md:p-0 rounded-lg bg-neutral-900 md:bg-transparent
+                 border border-neutral-800 md:border-0 text-white
+                 md:animate-none animate-[fadeIn_0.4s_ease-out]"
+        >
+          <li>
+            <a
+              href="#home"
+              class="block py-2 px-3 rounded-lg bg-red-500 md:bg-transparent
+                     md:text-red-400 md:px-0 transition-colors duration-300"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="block py-2 px-3 rounded-lg hover:bg-neutral-800
+                     md:hover:bg-transparent md:hover:text-red-400 md:px-0
+                     transition-colors duration-300"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#popular"
+              class="block py-2 px-3 rounded-lg hover:bg-neutral-800
+                     md:hover:bg-transparent md:hover:text-red-400 md:px-0
+                     transition-colors duration-300"
+            >
+              Popular
+            </a>
+          </li>
+          <li>
+            <a
+              href="#features"
+              class="block py-2 px-3 rounded-lg hover:bg-neutral-800
+                     md:hover:bg-transparent md:hover:text-red-400 md:px-0
+                     transition-colors duration-300"
+            >
+              Feature
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block py-2 px-3 rounded-lg hover:bg-neutral-800
+                     md:hover:bg-transparent md:hover:text-red-400 md:px-0
+                     transition-colors duration-300"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+  <!-- Hero Section -->
+  <section id="home" class="text-white body-font">
+    <!-- add top padding because navbar is fixed -->
+    <div
+      class="container mx-auto flex px-5 pt-32 pb-20 items-center justify-center flex-col
+             animate-[fadeIn_0.7s_ease-out]"
+    >
+      <h1
+        class="title-font sm:text-5xl text-3xl mb-2 font-semibold text-white text-center
+               tracking-wide"
+      >
+        Choose The Best Car
+      </h1>
+      <h3 class="mb-1 mt-2 leading-relaxed font-bold text-2xl text-red-400">
+        Porsche Mission E
+      </h3>
+      <p class="text-gray-400 mb-6">⚡ Electric Car · Future of Performance</p>
+
+      <img
+        class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded
+               drop-shadow-[0_20px_50px_rgba(252,63,49,0.35)]
+               transition-transform duration-500 hover:scale-105 hover:translate-y-1"
+        alt="hero"
+        src="./Porsche-911-992-TurboS_Aero_CarbonFiber_FrontIntakeTrims_2-8-removebg-preview.png"
+      />
+
+      <!-- icons -->
+      <section class="text-gray-300 body-font w-full">
+        <div class="container px-5 py-2 mx-auto">
+          <div class="flex flex-wrap -m-4 text-center">
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div
+                class="px-4 py-6 rounded-xl bg-neutral-900/60 border border-neutral-800
+                       backdrop-blur-sm hover:-translate-y-1 hover:border-red-500
+                       transition-all duration-300"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="text-red-500 w-12 h-12 mb-3 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 17l4 4 4-4m-4-5v9"></path>
+                  <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
+                </svg>
+                <h2 class="title-font font-semibold text-3xl text-white">2.7K</h2>
+                <p class="leading-relaxed text-gray-400">Downloads</p>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div
+                class="px-4 py-6 rounded-xl bg-neutral-900/60 border border-neutral-800
+                       backdrop-blur-sm hover:-translate-y-1 hover:border-red-500
+                       transition-all duration-300"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="text-red-500 w-12 h-12 mb-3 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+                </svg>
+                <h2 class="title-font font-semibold text-3xl text-white">1.3K</h2>
+                <p class="leading-relaxed text-gray-400">Users</p>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div
+                class="px-4 py-6 rounded-xl bg-neutral-900/60 border border-neutral-800
+                       backdrop-blur-sm hover:-translate-y-1 hover:border-red-500
+                       transition-all duration-300"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="text-red-500 w-12 h-12 mb-3 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M3 18v-6a9 9 0 0118 0v6"></path>
+                  <path
+                    d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"
+                  ></path>
+                </svg>
+                <h2 class="title-font font-semibold text-3xl text-white">74</h2>
+                <p class="leading-relaxed text-gray-400">Files</p>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+              <div
+                class="px-4 py-6 rounded-xl bg-neutral-900/60 border border-neutral-800
+                       backdrop-blur-sm hover:-translate-y-1 hover:border-red-500
+                       transition-all duration-300"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="text-red-500 w-12 h-12 mb-3 inline-block"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h2 class="title-font font-semibold text-3xl text-white">46</h2>
+                <p class="leading-relaxed text-gray-400">Places</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="text-center lg:w-2/3 w-full mt-6">
+        <div class="flex justify-center">
+          <button
+            class="cursor-pointer inline-flex items-center justify-center
+                   text-white bg-[#fc3f31] border border-[#fc3f31]
+                   py-2.5 px-7 rounded-full text-lg font-medium
+                   shadow-[0_10px_30px_rgba(252,63,49,0.45)]
+                   hover:bg-transparent hover:text-[#fc3f31]
+                   transition-all duration-300"
+          >
+            Get started
+          </button>
+          <button
+            class="cursor-pointer ml-4 inline-flex items-center justify-center
+                   text-gray-200 bg-gray-900 border border-gray-700
+                   py-2.5 px-7 rounded-full text-lg font-medium
+                   hover:bg-gray-100 hover:text-gray-900
+                   transition-all duration-300"
+          >
+            Explore
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content / About -->
+  <section id="about" class="text-white body-font overflow-hidden">
+    <div class="container px-5 py-24 mx-auto">
+      <div
+        class="lg:w-4/5 mx-auto flex flex-wrap rounded-2xl bg-gradient-to-r from-neutral-900 to-black
+               border border-neutral-800/70 shadow-[0_25px_80px_rgba(0,0,0,0.8)]
+               overflow-hidden"
+      >
+        <img
+          alt="ecommerce"
+          class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center
+                 transition-transform duration-500 hover:scale-105"
+          src="./car interior.avif"
+        />
+        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-10 p-6">
+          <h2 class="text-sm title-font text-red-400 tracking-[0.2em] uppercase mb-1">
+            Brand Name
+          </h2>
+          <h1 class="text-white text-3xl title-font font-semibold mb-3">
+            The Catcher in the Ride
+          </h1>
+          <div class="flex mb-4 items-center">
+            <span class="flex items-center">
+              <!-- stars -->
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 text-red-500"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 text-red-500"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 text-red-500"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 text-red-500"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 text-red-500"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              <span class="text-gray-400 ml-3 text-sm">4 Reviews</span>
+            </span>
+            <span
+              class="flex ml-3 pl-3 py-2 border-l-2 border-gray-700 space-x-3 text-gray-500"
+            >
+              <a class="hover:text-red-400 transition-colors duration-300">
+                <svg
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="hover:text-red-400 transition-colors duration-300">
+                <svg
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="hover:text-red-400 transition-colors duration-300">
+                <svg
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                  ></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+          <p class="leading-relaxed text-gray-300 text-sm md:text-base">
+            Sleek lines, immersive ambient lighting and a futuristic cockpit bring you a
+            driving experience that feels like tomorrow. Stay connected, comfortable and in
+            control with intelligent systems designed around you.
+          </p>
+          <div
+            class="flex mt-6 items-center pb-5 border-b border-gray-700 mb-5 gap-6 flex-wrap"
+          >
+            <div class="flex items-center gap-2">
+              <span class="mr-1 text-gray-300 text-sm">Color</span>
+              <button
+                class="border-2 border-gray-500 rounded-full w-6 h-6 focus:outline-none
+                       hover:border-red-500 transition-colors duration-300"
+              ></button>
+              <button
+                class="border-2 border-gray-500 ml-1 bg-gray-700 rounded-full w-6 h-6
+                       focus:outline-none hover:border-red-500 transition-colors duration-300"
+              ></button>
+              <button
+                class="border-2 border-gray-500 ml-1 bg-red-500 rounded-full w-6 h-6
+                       focus:outline-none hover:border-red-400 transition-colors duration-300"
+              ></button>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="mr-1 text-gray-300 text-sm">Variant</span>
+              <div class="relative">
+                <select
+                  class="rounded border appearance-none border-gray-500 bg-black text-white
+                         py-1.5 pl-3 pr-10 text-sm
+                         focus:outline-none focus:ring-2 focus:ring-red-500
+                         focus:border-red-500 transition-colors duration-300"
+                >
+                  <option>Standard</option>
+                  <option>Sport</option>
+                  <option>Performance</option>
+                  <option>Track</option>
+                </select>
+                <span
+                  class="absolute right-0 top-0 h-full w-8 text-center text-gray-400
+                         pointer-events-none flex items-center justify-center"
+                >
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-4 h-4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="title-font font-semibold text-2xl text-white">$58,000.00</span>
+            <button
+              class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6
+                     focus:outline-none hover:bg-red-600 rounded-full text-sm
+                     font-medium transition-colors duration-300"
+            >
+              Buy Now
+            </button>
+            <button
+              class="rounded-full w-10 h-10 bg-gray-200/90 p-0 border-0 inline-flex
+                     items-center justify-center text-gray-700 ml-4
+                     hover:bg-red-500 hover:text-white transition-colors duration-300"
+            >
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards / Popular -->
+  <section id="popular" class="text-gray-200 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap w-full mb-20 items-end">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h1 class="sm:text-3xl text-2xl font-semibold title-font mb-2 text-gray-100">
+            Discover The Most Popular Rides
+          </h1>
+          <div class="h-1 w-20 bg-red-500 rounded"></div>
+        </div>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-400 text-sm md:text-base">
+          From sleek city cruisers to track-ready beasts, find the perfect car that matches
+          your style, performance needs and budget — all in one place.
+        </p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div
+            class="bg-gray-900/80 p-6 rounded-xl border border-neutral-800
+                   hover:-translate-y-2 hover:border-red-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.9)]
+                   transition-all duration-300"
+          >
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6
+                     transition-transform duration-500 hover:scale-105"
+              src="./Porsche Mission E.jpg"
+              alt="content"
+            />
+            <h3 class="tracking-widest text-red-400 text-xs font-medium title-font">
+              ELECTRIC
+            </h3>
+            <h2 class="text-lg text-gray-200 font-medium title-font mb-2">
+              Porsche Mission E
+            </h2>
+            <p class="leading-relaxed text-sm text-gray-300">
+              Instant torque, silent acceleration and a design that turns heads wherever
+              it goes.
+            </p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div
+            class="bg-gray-900/80 p-6 rounded-xl border border-neutral-800
+                   hover:-translate-y-2 hover:border-red-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.9)]
+                   transition-all duration-300"
+          >
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6
+                     transition-transform duration-500 hover:scale-105"
+              src="./Porsche-911-992-TurboS_Aero_CarbonFiber_FrontIntakeTrims_2-8-removebg-preview.png"
+              alt="content"
+            />
+            <h3 class="tracking-widest text-red-400 text-xs font-medium title-font">
+              CROSSOVER
+            </h3>
+            <h2 class="text-lg text-gray-200 font-medium title-font mb-2">
+              Mission E Cross Turismo
+            </h2>
+            <p class="leading-relaxed text-sm text-gray-300">
+              Versatile, powerful and ready for every journey — from city streets to
+              long road trips.
+            </p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div
+            class="bg-gray-900/80 p-6 rounded-xl border border-neutral-800
+                   hover:-translate-y-2 hover:border-red-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.9)]
+                   transition-all duration-300"
+          >
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6
+                     transition-transform duration-500 hover:scale-105"
+              src="./Track Edition.webp"
+              alt="content"
+            />
+            <h3 class="tracking-widest text-red-400 text-xs font-medium title-font">
+              PERFORMANCE
+            </h3>
+            <h2 class="text-lg text-gray-200 font-medium title-font mb-2">
+              Track Edition
+            </h2>
+            <p class="leading-relaxed text-sm text-gray-300">
+              Built for the thrill-seeker who wants razor sharp handling and raw power__ready for every journey .
+            </p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div
+            class="bg-gray-900/80 p-6 rounded-xl border border-neutral-800
+                   hover:-translate-y-2 hover:border-red-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.9)]
+                   transition-all duration-300"
+          >
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6
+                     transition-transform duration-500 hover:scale-105"
+              src="./Urban Nova.jpeg"
+              alt="content"
+            />
+            <h3 class="tracking-widest text-red-400 text-xs font-medium title-font">
+              CITY
+            </h3>
+            <h2 class="text-lg text-gray-200 font-medium title-font mb-2">
+              Urban Nova
+            </h2>
+            <p class="leading-relaxed text-sm text-gray-300">
+              Compact, smart and efficient — perfect for everyday commutes and weekend
+              escapes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="text-gray-200 body-font">
+    <div class="container px-5 pb-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-6">
+        <h1 class="text-2xl font-semibold title-font mb-4 text-white">
+          Designed For Exceptional Driving
+        </h1>
+        <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+          From adaptive driving modes to advanced safety and smart connectivity, Drive-Nova
+          brings everything together in one powerful experience.
+        </p>
+      </div>
+      <img
+        class="xl:w-2/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded-2xl
+               shadow-[0_25px_70px_rgba(0,0,0,0.9)]
+               transition-transform duration-500 hover:scale-105 hover:-translate-y-1"
+        alt="hero"
+        src="./carr-1.png"
+      />
+    </div>
+  </section>
+
+  <!-- Contact us -->
+  <section id="contact" class="text-gray-200 body-font">
+    <div class="container px-5 py-24 mx-auto -mt-60">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-semibold title-font mb-4 text-gray-100">
+          Get In Touch With CarSpotter
+        </h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-400">
+          Have questions, ideas or just want to explore more options? Share your details
+          and our team will get back to you with the best match for your driving style.
+        </p>
+      </div>
+      <div
+        class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4
+               sm:space-y-0 space-y-4 sm:px-0 items-end"
+      >
+        <div class="relative flex-grow w-full">
+          <label for="full-name" class="leading-7 text-sm text-gray-400">Full Name</label>
+          <input
+            type="text"
+            id="full-name"
+            name="full-name"
+            class="w-full bg-gray-900 bg-opacity-60 rounded-lg border border-gray-600
+                   focus:border-red-500 focus:bg-black/80 focus:ring-2 focus:ring-red-500/40
+                   text-base outline-none text-gray-100 py-2 px-3 leading-8
+                   transition-colors duration-300"
+          />
+        </div>
+        <div class="relative flex-grow w-full">
+          <label for="email" class="leading-7 text-sm text-gray-400">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full bg-gray-900 bg-opacity-60 rounded-lg border border-gray-600
+                   focus:border-red-500 focus:bg-black/80 focus:ring-2 focus:ring-red-500/40
+                   text-base outline-none text-gray-100 py-2 px-3 leading-8
+                   transition-colors duration-300"
+          />
+        </div>
+        <button id="send" class="text-white bg-red-500 border-0 py-2.5 px-8 focus:outline-none
+                 hover:bg-red-600 rounded-full text-lg font-medium shadow-[0_10px_35px_rgba(248,113,113,0.6)]
+ transition-transform duration-300 hover:-translate-y-0.5"
+        >
+          SEND
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-gray-400 body-font border-t border-neutral-800 bg-black">
+    <div
+      class="container px-5 py-16 mx-auto flex md:items-start lg:items-start md:flex-row
+             md:flex-nowrap flex-wrap flex-col"
+    >
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left mb-10 md:mb-0">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center">
+          <img
+            src="./images-removebg-preview (1).png"
+            class="w-20 h-20 text-white p-2 bg-black rounded-full"
+          />
+          <span class="ml-3 text-xl text-white">CarSpotter</span>
+        </a>
+        <p class="mt-3 text-sm text-gray-400">
+          Explore the future of driving with electric performance, intelligent design and a
+          seamless digital experience.
+        </p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center">
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10 md:mb-0">
+          <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
+            MODELS
+          </h2>
+          <nav class="list-none mb-4 space-y-2">
+            <li><a class="hover:text-red-400 cursor-pointer">Mission E</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Nova X</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Urban Nova</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Track Edition</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10 md:mb-0">
+          <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
+            COMPANY
+          </h2>
+          <nav class="list-none mb-4 space-y-2">
+            <li><a class="hover:text-red-400 cursor-pointer">About</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Careers</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Press</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Investors</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10 md:mb-0">
+          <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
+            SUPPORT
+          </h2>
+          <nav class="list-none mb-4 space-y-2">
+            <li><a class="hover:text-red-400 cursor-pointer">Help Center</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Contact</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Test Drive</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">FAQs</a></li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
+            LEGAL
+          </h2>
+          <nav class="list-none mb-4 space-y-2">
+            <li><a class="hover:text-red-400 cursor-pointer">Terms</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Privacy</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Cookies</a></li>
+            <li><a class="hover:text-red-400 cursor-pointer">Licenses</a></li>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="bg-neutral-950">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left">
+          © 2025 Car_Spotter —
+          <span class="text-gray-400 ml-1">All rights reserved.</span>
+        </p>
+        <span
+          class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start space-x-4"
+        >
+          <a class="text-gray-500 hover:text-red-400 transition-colors duration-300">
+            <svg
+              fill="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+              ></path>
+            </svg>
+          </a>
+          <a class="text-gray-500 hover:text-red-400 transition-colors duration-300">
+            <svg
+              fill="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+              ></path>
+            </svg>
+          </a>
+          <a class="text-gray-500 hover:text-red-400 transition-colors duration-300">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path
+                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+              ></path>
+            </svg>
+          </a>
+          <a class="text-gray-500 hover:text-red-400 transition-colors duration-300">
+            <svg
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="0"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+              ></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple JS to toggle navbar on mobile -->
+  <script>
+    const toggleBtn = document.getElementById("nav-toggle");
+    const menu = document.getElementById("navbar-menu");
+
+    toggleBtn.addEventListener("click", () => {
+      const isHidden = menu.classList.contains("hidden");
+      if (isHidden) {
+        menu.classList.remove("hidden");
+        menu.classList.add("animate-[fadeIn_0.3s_ease-out]");
+        toggleBtn.setAttribute("aria-expanded", "true");
+      } else {
+        menu.classList.add("hidden");
+        toggleBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
